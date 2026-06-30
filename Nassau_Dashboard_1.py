@@ -47,6 +47,7 @@ try:
     df['Year']          = df['Order Date'].dt.year
     df['Quarter']       = df['Order Date'].dt.quarter
     df['Profit Margin'] = (df['Gross Profit'] / df['Sales']) * 100
+    df['Factory'] = df['Product Name'].map(factory_mapping)
 
     # Get exact feature names from model
     MODEL_FEATURES = rf.feature_names_in_.tolist()
