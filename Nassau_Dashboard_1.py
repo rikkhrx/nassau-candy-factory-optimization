@@ -3,7 +3,16 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import pickle
+import os
 import warnings
+import gdown
+
+MODEL_PATH = "random_forest_model.pkl"
+if not os.path.exists(MODEL_PATH):
+    gdown.download(
+        "https://drive.google.com/uc?id=1H_gA63_IGnrqrJhHxzvPKlurNl5YoaJw",
+        MODEL_PATH, quiet=False
+    )
 warnings.filterwarnings('ignore')
 
 st.set_page_config(
